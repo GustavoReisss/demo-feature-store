@@ -1,0 +1,9 @@
+<div class="
+    w-[inherit] border rounded-md border-{{color}}-{{disabled ? '700' : '500'}}
+    focus-within:ring-2 ring--{{color}}-500 
+    {{disabled ? 'text-text-700' : '' }}">
+
+    <input [(ngModel)]="value" (ngModelChange)="onChange($event)" type="text"
+        class="bg-[transparent] text-lg w-full ps-4 py-1 outline-none" [placeholder]="placeholder"
+        [disabled]="disabled">
+</div>
