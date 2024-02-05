@@ -46,6 +46,8 @@ module.exports = {
       "white-700": "var(--white-700)",
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }
 

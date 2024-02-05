@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -20,13 +20,13 @@ export class InputComponent implements ControlValueAccessor {
   @Input() variant = ''
   @Input() placeholder = "Procurar Feature"
 
-  value = ''
+  value = signal('')
   touched = false;
-  disabled = false;
+  disabled = true;
 
   writeValue(newValue: any): void {
     // Usado pelo FormsModule para escrever o valor em um FormControl
-    this.value = newValue
+    this.value.set(newValue)
   }
 
   onChange: any = () => { };

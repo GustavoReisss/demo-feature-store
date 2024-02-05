@@ -6,5 +6,10 @@ export const routes: Routes = [
         path: 'consulta',
         component: DefaultLayoutComponent,
         loadChildren: () => import('./modules/consulta/consulta.routes').then(r => r.routes)
+    },
+    {
+        path: '',
+        redirectTo: 'consulta',
+        pathMatch: 'full'
     }
 ];

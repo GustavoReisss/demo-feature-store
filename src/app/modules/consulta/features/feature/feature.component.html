@@ -1,22 +1,26 @@
 <main class="grid gap-6 md:grid-cols-[1fr_auto] h-full">
     <div class="flex flex-col gap-8">
-        <div class="flex gap-5">
-            <app-input class="w-full" [(ngModel)]="value" placeholder="testeee" [disabled]="false"></app-input>
-            <div class="w-60 border border-primary-500 rounded-md flex items-center ps-4 py-1 text-lg ">
-                Nome
-            </div>
+        <div>
+            <app-tabs class="w-max"></app-tabs>
+        </div>
+        <div class="flex gap-5 grow-">
+            <app-input class="w-full" [(ngModel)]="value" placeholder="testeee"></app-input>
+            <app-combobox [(ngModel)]="value2" class="w-full" [options]="options" labelKey="label"
+                valueKey="value"></app-combobox>
+            <app-select [(ngModel)]="value3" class="w-full" [options]="options" labelKey="label"></app-select>
         </div>
 
         <div class="grid gap-4">
             <div class="border border-primary-500 rounded-md h-28">
-
+                Input: {{ value }}
             </div>
 
             <div class="border border-primary-500 rounded-md h-28">
+                Combobox: {{ value2 | json }}
 
             </div>
             <div class="border border-primary-500 rounded-md h-28">
-
+                Select: {{ value3 | json }}
             </div>
         </div>
     </div>

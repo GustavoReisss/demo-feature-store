@@ -1,0 +1,9 @@
+<div
+    class="p-[5px] bg-background-600 rounded-md flex w-[inherit] overflow-auto scrollbar scrollbar-track-background-600 scrollbar-thumb-background-300">
+    @for(tab of options(); track tab.label) {
+    <div class="min-w-32 py-1 px-2 flex-grow text-center rounded-md basis-0 truncate" [title]="tab.label"
+        (click)="selectedOption.set(tab)" [class.bg-background-400]="tab === selectedOption()">
+        <span class="text-xl">{{ tab.label }}</span>
+    </div>
+    }
+</div>

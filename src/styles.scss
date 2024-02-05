@@ -5,6 +5,17 @@
 @tailwind utilities;
 
 
+@import '@angular/cdk/overlay-prebuilt.css';
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' -25,
+        'opsz' 40
+}
+
+
 * {
     padding: 0;
     margin: 0;

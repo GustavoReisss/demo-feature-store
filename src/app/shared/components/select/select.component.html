@@ -1,0 +1,46 @@
+<div class="w-[inherit]">
+    <div [title]="selectedOption()?.label || placeholder" class="
+    border rounded-md border-{{color}}-500
+    cursor-pointer flex justify-between items-center pl-4 pr-2" [class.opacity-70]="disabled"
+        (click)="!disabled && toggle()" cdkOverlayOrigin #trigger #origin="cdkOverlayOrigin">
+        <span class="block text-lg py-1 truncate pr-2">
+            @if(selectedOption()) {
+            {{ selectedOption()!.label }}
+            } @else {
+            <span class="opacity-65">
+                {{ placeholder }}
+            </span>
+            }
+        </span>
+        <span class="material-symbols-outlined opacity-55 duration-200 transition-transform text-lg "
+            [class.rotate-180]="isOpen">
+            keyboard_arrow_down
+        </span>
+    </div>
+
+    <ng-template cdkConnectedOverlay [cdkConnectedOverlayWidth]="comboboxWidth" [cdkConnectedOverlayOrigin]="origin"
+        [cdkConnectedOverlayOpen]="isOpen" (overlayOutsideClick)="isOpen = false">
+        <div class="my-1 w-full bg-background-500 rounded-md border border-{{color}}-500 text-lg shadow-xl">
+            <ul
+                class="px-2 py-2 max-h-40 overflow-y-auto scrollbar scrollbar-track-[transparent] scrollbar-thumb-background-300">
+                @for (option of options(); track option.label) {
+                <li [title]="option.label" (click)="setOption(option)"
+                    class="pl-1 py-1 pr-2 rounded-md cursor-pointer transition duration-300 hover:bg-background-300 flex items-center gap-1">
+
+                    <span class="material-symbols-outlined  w-6 text-2xl">
+                        @if(selectedOption() === option) {
+                        done
+                        }
+                    </span>
+
+                    <span class="truncate">
+                        {{ option.label }}
+                    </span>
+                </li>
+                } @empty {
+                <li> Sem opções no momento.</li>
+                }
+            </ul>
+        </div>
+    </ng-template>
+</div>
