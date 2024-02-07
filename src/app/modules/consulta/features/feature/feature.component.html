@@ -10,6 +10,12 @@
             <app-select [(ngModel)]="value3" class="w-full" [options]="options" labelKey="label"></app-select>
         </div>
 
+        <div>
+
+            <button (click)="increment()">increment</button>
+            <app-pagination [items]="items()"></app-pagination>
+        </div>
+
         <div class="grid gap-4">
             <div class="border border-primary-500 rounded-md h-28">
                 Input: {{ value }}

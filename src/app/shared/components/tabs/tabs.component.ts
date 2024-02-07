@@ -17,7 +17,6 @@ export class TabsComponent {
   // @Input() labelKey: null | string = null
   @Input() labelKey: null | string = "label"
   @Input() valueKey: null | string = null
-  @Input() placeholder = "Selecione..."
   _options = input<any[]>([{ "label": "Feature", "value": "" }, { "label": "Tabela", "value": "" }], { alias: 'options' })
 
   // Options
