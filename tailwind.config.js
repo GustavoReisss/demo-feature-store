@@ -14,6 +14,7 @@ module.exports = {
       "background-600": "var(--background-600)",
 
       // Text
+      "text-300": "var(--text-300)",
       "text-400": "var(--text-400)",
       "text-500": "var(--text-500)",
       "text-600": "var(--text-600)",
@@ -39,6 +40,9 @@ module.exports = {
       "accent-500": "var(--accent-500)",
       "accent-600": "var(--accent-600)",
       "accent-700": "var(--accent-700)",
+
+      // Cancel
+      "cancel-500": "var(--cancel-500)",
 
       // White
       "white-500": "var(--white-500)",

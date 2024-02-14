@@ -1,8 +1,14 @@
-<div class="w-full h-full grid grid-rows-[auto_1fr]">
+<div class="w-full h-full grid grid-rows-[auto_auto_1fr] gap-3">
     <header class="text-white-500">
         <h1 class="text-5xl font-bold">Feature Store</h1>
         <h2 class="text-3xl font-normal">Agilizando o consumo de dados no desenvolvimento de novas aplicações</h2>
     </header>
+
+    <div>
+        <app-tabs class="w-max" [tabs]="tabs" [(ngModel)]="selectedTab" (tabChange)="checkoutTab($event)"
+            labelKey="label" valueKey="value"></app-tabs>
+    </div>
+
     <div class="h-full">
         <router-outlet></router-outlet>
     </div>

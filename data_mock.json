@@ -1,0 +1,184 @@
+{
+    "tables": [
+        {
+            "id": 1,
+            "table_name": "table_name",
+            "table_business_description": "TBD by User",
+            "table_layer": "sot",
+            "table_origin_tables": [
+                "table_x_sor",
+                "table_y_sor",
+                "table_z_sor"
+            ],
+            "table_creation_date": "2024-01-19 13:23:45",
+            "table_data_domains": [
+                "domain_x",
+                "domain_y"
+            ],
+            "table_created_by": "user@itau-unibanco.com.br",
+            "table_feature_list": [
+                {
+                    "feature_name": "feature name 1",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 2",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 3",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 4",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 5",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 6",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 7",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 8",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 9",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 10",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                },
+                {
+                    "feature_name": "feature name 11",
+                    "feature_version_schema": "object",
+                    "table_name": "table_name"
+                }
+            ],
+            "table_sample": {
+                "1": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ],
+                "2": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ],
+                "3": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ],
+                "4": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ],
+                "5": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ],
+                "6": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ],
+                "7": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ],
+                "8": [
+                    "feature sample value 1",
+                    "feature sample value 2",
+                    "feature sample value 3",
+                    "feature sample value 4",
+                    "feature sample value 5",
+                    "feature sample value 6",
+                    "feature sample value 7",
+                    "feature sample value 8",
+                    "feature sample value 9",
+                    "feature sample value 10",
+                    "feature sample value 11"
+                ]
+            }
+        }
+    ]
+}

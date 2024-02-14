@@ -4,13 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { ComboboxComponent } from '../../../../shared/components/combobox/combobox.component';
 import { JsonPipe } from '@angular/common';
 import { SelectComponent } from '../../../../shared/components/select/select.component';
-import { TabsComponent } from '../../../../shared/components/tabs/tabs.component';
 import { PaginationComponent } from '../../../../shared/components/pagination/pagination.component';
 
 @Component({
   selector: 'app-feature',
   standalone: true,
-  imports: [InputComponent, FormsModule, ComboboxComponent, JsonPipe, SelectComponent, TabsComponent, PaginationComponent],
+  imports: [InputComponent, FormsModule, ComboboxComponent, JsonPipe, SelectComponent, PaginationComponent],
   templateUrl: './feature.component.html',
   styleUrl: './feature.component.scss'
 })
@@ -27,14 +26,9 @@ export class FeatureComponent {
     { "label": "option 6", "value": "6" },
     { "label": "option 7 option 7 option 7", "value": "7" },
   ]
-
   value2 = this.options[0]["value"]
   value3 = this.options[1]
 
 
-  items = signal(10)
-
-  increment() {
-    this.items.update(items => items + 5)
-  }
+  items = signal(100)
 }

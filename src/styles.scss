@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './styles/tables.scss';
 
 @import '@angular/cdk/overlay-prebuilt.css';
 
@@ -11,6 +12,14 @@
     font-variation-settings:
         'FILL' 0,
         'wght' 200,
+        'GRAD' -25,
+        'opsz' 40
+}
+
+.icon-bold {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 600,
         'GRAD' -25,
         'opsz' 40
 }
@@ -47,6 +56,7 @@ body {
     --background-600: hsl(205 53 5);
 
     // Text
+    --text-300: hsl(205 51 95);
     --text-400: hsl(205 51 90);
     --text-500: hsl(205 51 85);
     --text-600: hsl(205 51 80);
@@ -73,6 +83,10 @@ body {
     --accent-600: hsl(146 53 30);
     --accent-700: hsl(146 53 25);
 
+
+    --cancel-500: hsl(290, 53%, 45%);
+
+
     // White
     --white-500: hsl(208 52 95);
     --white-600: hsl(208 7 85);
@@ -81,5 +95,37 @@ body {
 
 
 .light {
-    --background-500: hsl(205 53 8);
+    color: var(--text-500);
+    --background-500: hsl(205, 53%, 99%);
+    --text-500: hsl(205 51 10);
+}
+
+.resize-vertical {
+    resize: vertical;
+
+    &::-webkit-resizer {
+        background-color: var(--background-600);
+        background-image: url('./assets/resize_vertical.svg');
+        background-size: contain;
+    }
+}
+
+.resize-horizontal {
+    resize: horizontal;
+
+    &::-webkit-resizer {
+        background-color: var(--background-600);
+        background-image: url('./assets/resize_horizontal.svg');
+        background-size: contain;
+    }
+}
+
+.resize-both {
+    resize: both;
+
+    &::-webkit-resizer {
+        background-color: var(--background-600);
+        background-image: url('./assets/resize_both.svg');
+        background-size: contain;
+    }
 }

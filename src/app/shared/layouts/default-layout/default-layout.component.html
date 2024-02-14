@@ -1,11 +1,29 @@
 <div class="w-full h-full bg-background-500 grid grid-rows-[auto_1fr]">
     <nav>
-        <app-navbar></app-navbar>
+        <app-navbar (bagClicked)="toggle()"></app-navbar>
     </nav>
 
-    <main id="main-content" class="px-14 pt-5 h-full w-full">
-        <div class="h-full">
+    <main id="main-content" class="grid grid-cols-[1fr_auto] h-full w-full max-h-full max-w-[100vw]">
+        <div class="h-full pt-5 px-14">
             <router-outlet></router-outlet>
         </div>
+
+        <aside [style.width]="showSelectedFeatures() ? '22rem' : '0px'"
+            class="px-1 overflow-hidden transition-all shadow-lg bg-background-400">
+            <app-feature-bag></app-feature-bag>
+        </aside>
     </main>
+
+    <!-- <main id="main-content" class="h-full w-full max-h-full max-w-[100vw]">
+        <div class="h-full pt-5 px-14">
+            <router-outlet></router-outlet>
+        </div>
+
+        <app-modal [open]="showSelectedFeatures()" (close)="toggle()" position="right"
+            [backdrop]="true" class="container h-full px-2 pt-5 w-80">
+            <app-feature-bag></app-feature-bag>
+        </app-modal>
+    </main> -->
+
+
 </div>

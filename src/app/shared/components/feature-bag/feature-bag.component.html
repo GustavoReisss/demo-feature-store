@@ -1,0 +1,23 @@
+<!-- <app-modal [open]="showSelectedFeatures" (close)="showSelectedFeatures = false" position="right" [backdrop]="true"
+    class="container h-full px-2 pt-5 w-80"> -->
+<h1>Features Selecionadas</h1>
+
+<ng-container *ngIf="selectedFeatures$ | async as selectedFeatures">
+    @for (table of tableNames(selectedFeatures); track table) {
+    <app-accordion class="px-2 py-1 border rounded-md border-primary-700" [open]="false">
+        <header summary class="w-full font-bold text-primary-300">{{ table }}</header>
+        <main class="overflow-auto max-h-52">
+            <div>
+                @for (feature of selectedFeatures[table]; track feature.feature_name) {
+                <p> {{ feature.feature_name }}</p>
+                }
+            </div>
+        </main>
+        <footer class="flex justify-between text-sm font-bold text-secondary-500">
+            <button>Adicionar mais Features</button>
+            <button>Remover todas</button>
+        </footer>
+    </app-accordion>
+    }
+</ng-container>
+<!-- </app-modal> -->

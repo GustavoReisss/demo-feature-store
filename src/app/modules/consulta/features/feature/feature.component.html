@@ -1,9 +1,6 @@
 <main class="grid gap-6 md:grid-cols-[1fr_auto] h-full">
     <div class="flex flex-col gap-8">
-        <div>
-            <app-tabs class="w-max"></app-tabs>
-        </div>
-        <div class="flex gap-5 grow-">
+        <div class="flex gap-5">
             <app-input class="w-full" [(ngModel)]="value" placeholder="testeee"></app-input>
             <app-combobox [(ngModel)]="value2" class="w-full" [options]="options" labelKey="label"
                 valueKey="value"></app-combobox>
@@ -11,9 +8,7 @@
         </div>
 
         <div>
-
-            <button (click)="increment()">increment</button>
-            <app-pagination [items]="items()"></app-pagination>
+            <app-pagination [items]="items()" [currentPage]="1"></app-pagination>
         </div>
 
         <div class="grid gap-4">

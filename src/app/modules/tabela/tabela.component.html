@@ -1,0 +1,139 @@
+@if(table()) {
+
+<div class="h-full grid grid-rows-[auto_1px_auto] gap-5 py-3 lg:grid-cols-[350px_1px_1fr] lg:grid-rows-1">
+
+    <div class="divide-y divide-primary-700">
+        <div class="pb-4">
+            <button class="ml-auto flex border border-primary-500 rounded-md py-[2px] px-2 mb-1">
+                <span class="material-symbols-outlined icon-bold text-primary-500">more_horiz</span>
+            </button>
+
+            <h3 class="font-bold text-text-600">Tabela</h3>
+            <h2 class="text-2xl">
+                <button class="inline-flex align-middle transition hover:scale-110" (click)="toggleTable()">
+                    <span
+                        class="material-symbols-outlined  {{ anyFeatureSelected ? 'text-cancel-500' : 'text-secondary-500' }}">
+                        {{ anyFeatureSelected ? 'do_not_disturb_on' : 'add_circle' }}</span>
+                </button>
+
+                <span class="font-bold text-text-400">
+                    {{table().table_name}}
+                </span>
+            </h2>
+        </div>
+
+        <div class="grid gap-4 pt-4">
+            <section>
+                <label class="font-light text-text-300">Descrição</label>
+                <p class="font-bold">{{ table().table_business_description }}</p>
+            </section>
+
+            <section>
+                <label class="font-light text-text-300">Camada de Dados</label>
+                <p class="font-bold">{{ table().table_business_description }}</p>
+            </section>
+
+            <section>
+                <label class="font-light text-text-300">Data de Criação</label>
+                <p class="font-bold">{{ table().table_business_description }}</p>
+            </section>
+
+            <section>
+                <label class="font-light text-text-300">Criado por</label>
+                <p class="font-bold">{{ table().table_business_description }}</p>
+            </section>
+
+            <section>
+                <label class="font-light text-text-300">Domínios de Dados</label>
+                <ul class="list-disc">
+                    @for(domain of table().table_data_domains; track $index) {
+                    <li class="ml-4 font-bold">{{ domain }}</li>
+                    }
+                </ul>
+            </section>
+
+            <section>
+                <label class="font-light text-text-300">Tabelas de Origem</label>
+                <ul class="list-disc">
+                    @for(origin_table of table().table_origin_tables; track $index) {
+                    <li class="ml-4 font-bold">{{ origin_table }}</li>
+                    }
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <div class="w-full h-full bg-primary-700"></div>
+
+    <div class="grid gap-4 h-max">
+
+        <h2 class="text-xl font-bold">Features presentes na tabela</h2>
+
+        <div class="border border-primary-700 p-4 rounded-md w-max whitespace-nowrap overflow-auto 
+        scrollbar scrollbar-thumb-background-300 scrollbar-track-background-600 {{ featureTableExtraClasses }}">
+            <table class="table-primary">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @for(feature of table().table_feature_list; track $index) {
+                    <tr class="transition hover:bg-background-600">
+                        <td>
+                            <button class="align-middle rounded-full transition hover:scale-110 h-[1.315rem]"
+                                (click)="toggleFeature(feature)">
+                                <span
+                                    class="text-xl leading-none material-symbols-outlined {{ feature.added ? 'text-cancel-500' : 'text-secondary-500' }}">
+                                    {{ feature.added ? 'do_not_disturb_on' : 'add_circle' }}
+                                </span>
+                            </button>
+                            {{ feature.feature_name }}
+                        </td>
+
+                        <td> {{ feature.feature_version_schema }}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="mt-4 text-xl font-bold">Amostra de dados</h2>
+
+        <div class="border border-primary-700 p-4 rounded-md overflow-auto whitespace-nowrap scrollbar scrollbar-thumb-background-300
+        scrollbar-track-background-600 {{ sampleTableExtraClasses }}">
+            <table class="table-primary">
+                <thead>
+                    <tr>
+                        @for(feature of table().table_feature_list; track $index) {
+
+                        <th>
+                            <button class="align-middle transition rounded-full hover:scale-110"
+                                (click)="toggleFeature(feature)">
+                                <span
+                                    class="text-xl material-symbols-outlined {{ feature.added ? 'text-cancel-500' : 'text-secondary-500' }}">
+                                    {{ feature.added ? 'do_not_disturb_on' : 'add_circle' }}
+                                </span>
+                            </button>
+                            {{ feature.feature_name }}
+                        </th>
+                        }
+                </thead>
+
+                <tbody>
+                    @for(sample of tableSamples(); track $index) {
+                    <tr class="transition hover:bg-background-600">
+                        @for (value of sample; track $index) {
+                        <td>{{ value }}</td>
+                        }
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+}
